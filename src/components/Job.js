@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Job({job}) {
+export default function Job({job, searchSkill, setSearchSkill}) {
 
     
     return (      
@@ -25,7 +25,10 @@ export default function Job({job}) {
             </div>
             <div className="languages">
                 {job.languages.map((language, index) => (
-                    <span className="language" key={index}>{language}</span>
+                    <button className="language" key={index} onClick={()=> {
+                        setSearchSkill(language)
+                        searchSkill=language
+                        }}>{language}</button>
                 ))}
             </div>
             

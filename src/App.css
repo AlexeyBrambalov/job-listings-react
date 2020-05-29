@@ -101,3 +101,16 @@
     width: 100%;
     min-width: 300px;
 }
+
+.input-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+}

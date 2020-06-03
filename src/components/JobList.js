@@ -2,12 +2,12 @@ import React from 'react'
 
 import Job from './Job'
 
-export default function JobList({filtedData, searchSkill, setSearchSkill}) {
+export default function JobList({newData, setSearchSkillArr, searchSkillArr}) {
     
     return (
         <div className="joblist">
-            {filtedData.map((job, index)=> 
-                    <Job job={job} key={index} searchSkill={searchSkill} setSearchSkill={setSearchSkill}/>
+            {newData.map((job, index)=> 
+                    <Job job={job} key={index} setSearchSkillArr = {setSearchSkillArr} searchSkillArr={searchSkillArr}/>
             )}
         </div>
     )

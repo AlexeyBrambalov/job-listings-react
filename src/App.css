@@ -20,11 +20,12 @@
 .joblist{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
     min-width: 400px;
     margin: auto;
 }
 
+.job-clicked,
 .job-selected,
 .job{
     display: flex;
@@ -38,6 +39,7 @@
 
 .job-selected{
     border-left: 4px solid var(--dark-blue);
+    
 }
 
 .image{
@@ -88,13 +90,14 @@
     width: 100%;
 }
 
+.language-clicked,
 .language{
     color: var(--dark-blue);
     background-color: var(--light-blue);
     padding: 5px;
     font-weight: 700;
     margin-right: 30px;
-
+    border-radius: 5px;
 }
 
 .main{
@@ -108,9 +111,38 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    height: 50%;
 }
 
 button{
     border: none;
     cursor: pointer;
 }
+
+.job-clicked{
+    width: 70%;
+    margin: 30px 15%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.clear{
+    margin-left: auto;
+    color: var(--dark-blue);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.language-clicked::after {
+    content: "\00d7";
+    color: rgb(17, 13, 13);
+    font-weight: 700;
+    background-color: var(--dark-blue);
+    padding: 5px;
+    font-size: 20px;
+    color: var(--light-blue);
+    margin-left: 3px;
+    display: inline-block;
+    border-radius: 5px;
+
+  }

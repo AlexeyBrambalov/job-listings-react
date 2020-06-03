@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function Job({job, searchSkill, setSearchSkill}) {
+export default function Job({job, setSearchSkillArr, searchSkillArr}) {
+
+    let skillArr = [job.role, job.level, ...job.languages]
 
     
     return (      
@@ -24,10 +26,10 @@ export default function Job({job, searchSkill, setSearchSkill}) {
                 </div>
             </div>
             <div className="languages">
-                {job.languages.map((language, index) => (
+                {skillArr.map((language, index) => (
                     <button className="language" key={index} onClick={()=> {
-                        setSearchSkill(language)
-                        searchSkill=language
+                        if(!searchSkillArr.some(skill => skill === language)){
+                        setSearchSkillArr([...searchSkillArr, language])}
                         }}>{language}</button>
                 ))}
             </div>

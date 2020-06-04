@@ -3,24 +3,19 @@ import Match from './Match'
 
 export default function JobPosition({position, search}) {
 
-// console.log(search);
-
-
-   let index = position.indexOf(search)
+   let index = position.toLowerCase().indexOf(search.toLowerCase())
 
    let firstPos = position.substr(0, index);
 
-   let lastPos = position.substr(index + search.length, position.length);
-   
+   let lastPos = position.substr(index + search.length);
+
+   let match = position.substr(index, search.length)
+
     return (
         <>
-
         {firstPos}
-        <Match search={search}/>
-        {lastPos}
-
-
-            
+        <Match match={match}/>
+        {lastPos}     
         </>
     )
 }

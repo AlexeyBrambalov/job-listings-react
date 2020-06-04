@@ -1,10 +1,9 @@
 import React from 'react'
 
-export default function Match({search}) {
+export default function Match({match}) {
     return (
-        <span className="high">
-        {search}
-            
+        <span className="highlight">
+            {match}     
         </span>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
+import JobPosition from './JobPosition'
 
-export default function Job({job, setSearchSkillArr, searchSkillArr}) {
+export default function Job({job, setSearchSkillArr, searchSkillArr, search}) {
 
     let skillArr = [job.role, job.level, ...job.languages]
 
@@ -15,7 +16,8 @@ export default function Job({job, setSearchSkillArr, searchSkillArr}) {
                     {job.featured ? <span className="featured">featured</span> : ""}
                 </div>
                 <div className="middle">
-                    {job.position}
+                    <JobPosition position={job.position} search={search}/>
+                    {console.log(JobPosition.dangerouslySetInnerHTML)}
                 </div>
                 <div className="bottom">
                     <span>{job.postedAt}</span>

@@ -146,3 +146,7 @@ button{
     border-radius: 5px;
 
   }
+
+  .high{
+      background-color: yellow;
+  }

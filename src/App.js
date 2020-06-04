@@ -15,6 +15,7 @@ function App() {
 
   if(search){ filtedData = data.filter((job) => job.position.toLowerCase().includes(search.toLowerCase()))}
 
+
   let newData = filtedData.map(job=> ({ ...job, active: [job.role, job.level, ...job.languages] }))
 
   if(searchSkillArr.length > 0){newData = newData.filter(skill => searchSkillArr.every(r=> skill.active.includes(r)))}
@@ -27,7 +28,7 @@ function App() {
     <div className="App">
       <Search search = {search} setSearch = {setSearch}/>
       {searchSkillArr.length > 0 ? <SearchNavBar searchSkillArr={searchSkillArr} setSearchSkillArr={setSearchSkillArr}/> : "" }
-      <JobList newData={newData} setSearchSkillArr={setSearchSkillArr} searchSkillArr={searchSkillArr} />
+      <JobList newData={newData} setSearchSkillArr={setSearchSkillArr} searchSkillArr={searchSkillArr} search={search} />
     </div>
   );
 }
